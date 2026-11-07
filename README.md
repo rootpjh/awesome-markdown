@@ -1,254 +1,573 @@
-# Awesome Markdown [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome)
+Awesome Markdown Series - For Editors & (Pre)viewers, see [Awesome Markdown Editors & (Pre)viewers »](https://github.com/mundimark/awesome-markdown-editors) 
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/4/48/Markdown-mark.svg" align="right" width="208">
 
-> A curated list of delightful Markdown stuff.
+# Awesome Markdown (& Beyond)
 
-Markdown is a markup language created by John Gruber in collaboration with Aaron Swartz. It was designed to be easily converted to HTML and has been extended into different types of implementations.
+A collection of awesome markdown goodies (libraries, services, editors, tools, cheatsheets, etc.)
 
-<!--lint disable no-emphasis-as-heading-->
+<!--
+Note: :octocat: stands for the GitHub page and :gem: stands for the RubyGems page.
+-->
 
-_Please read the [contribution guidelines](.github/contributing.md) before contributing._
+#### _Contributions welcome. Anything missing? Send in a pull request. Thanks._
 
-<!--lint enable no-emphasis-as-heading-->
+> [!NOTE]
+>  As a new policy starting in 2026 - please add all new listing entries first to the [Upcoming / What's New in 2026?](UPCOMING.md) page.
+>  thank you for your understanding. 
+>
+>  ps: bonus - please, do NOT forget to add a link to your code / source on github / gitlab / codeberg or whatnot.
+>  if no source code is available, please add yourself to [the Commercial Edition](COMMERCIAL.md) page -
+>   no matter if the basic usage is free or you only have ads or such. 
 
-:gem: means **really _awesome/useful_**.<br />
-![Globe][globe] means that **it's _webapp/webservice_**.<br />
-![Android OS][android-os] means that **runs on _Android_**.<br />
-![iOS Logo][ios-logo] means that **runs on _iOS_**.<br />
-![Mac OS X][macosx] means that **runs on _macOS_**.<br />
-![Linux][linux] means that **runs on _Linux_**.<br />
-![Windows][windows] means that **runs on _Windows_**.<br />
 
-<!--lint disable no-paragraph-content-indent-->
 
-<!--lint disable alphabetize-lists-->
 
-## Contents
+## What's News?
 
-- [Awesome Markdown ![Awesome](https://github.com/sindresorhus/awesome)](#awesome-markdown-awesomehttpsgithubcomsindresorhusawesome)
-  - [Contents](#contents)
-  - [CMS / Blogs](#cms--blogs)
-  - [Libraries](#libraries)
-    - [C](#c)
-    - [Java](#java)
-    - [JavaScript](#javascript)
-    - [Perl](#perl)
-    - [PHP](#php)
-    - [Python](#python)
-    - [Ruby](#ruby)
-  - [Tools](#tools)
-    - [Converters](#converters)
-    - [Editors](#editors)
-    - [Linters](#linters)
-    - [Miscellaneous](#miscellaneous)
-    - [Presentations](#presentations)
-  - [Services](#services)
-  - [Resources](#resources)
-    - [Documentation](#documentation)
-    - [Tutorials](#tutorials)
-  - [License](#license)
+### Beyond Markdown - Let's fix markdown quirks & oddities and let's fill-in / add the missing parts (tables? footnotes? generic blocks? etc.)
 
----
+**Djot** (web: <https://djot.net>, github: <https://github.com/jgm/djot>) - by John MacFarlane (USA); a light markup syntax deriving most of its features from commonmark, but fixing a few things that make commonmark's syntax complex and difficult to parse efficiently. Djot is also much fuller-featured than commonmark, with support for definition lists, footnotes, tables, several new kinds of inline formatting (insert, delete, highlight, superscript, subscript), math, smart punctuation, attributes that can be applied to any element, and generic containers for block-level, inline-level, and raw content.
 
-<!--lint enable alphabetize-lists-->
+- [Beyond Markdown](https://johnmacfarlane.net/beyond-markdown.html) by John MacFarlane
+- [Djot Syntax Page](https://htmlpreview.github.io/?https://github.com/jgm/djot/blob/master/doc/syntax.html)
 
-<!--lint enable no-paragraph-content-indent-->
+**Versadoc** (github: <https://github.com/gettalong/versadok>) - by Thomas Leitner (Austria); a lightweight markup language mainly based on kramdown, a markdown-superset, and on djot, with further influence from asciidoc and restructuredtext. The goal of versadok is to create a markup language that is easy to write, read and reason about and fully-featured and not tied to a particular output format (hint: HTML). By being markdown-like many people will already be familiar with the general syntax.
 
-## CMS / Blogs
+- [Versadoc Syntax Page](https://github.com/gettalong/versadok/blob/master/website/syntax.page)
 
-> CMS or Blogs which support Markdown by default.
 
-- [Ghost](https://blog.ghost.org/markdown/) - Publishing platform for professional bloggers.
-- [Grav](https://getgrav.org/) - Modern Flat-File CMS.
-- [Hexo](https://hexo.io/) - A fast, simple & powerful blog framework
-- [Hugo](https://gohugo.io/) - Fast & Modern Static Website Engine.
-- [Jekyll](https://jekyllrb.com/) - Transform your plain text into static websites and blogs.
-- [Pelican](https://blog.getpelican.com/) - Static site generator that requires no database or server-side logic.
-- [Svbtle](https://svbtle.com/) - Blogging platform designed to help you think.
-- [Vuepress](https://vuepress.vuejs.org/) - Minimalistic Vue-powered static site generator.
-- [Laravel CommonMark Blog](https://github.com/spekulatius/laravel-commonmark-blog) - Static-generator to use with Laravel. Utilizes CommonMark and FrontMatter and publishes directly into the `public`-folder.
+**Texti (Text w/ Instructions)** (github: <https://github.com/texti>) - by Gerald Bauer (Austria);  a light markup syntax / language based on the best of markdown, wikipedia markup, latex & friends offering structured documents in (plain) text with formatting conventions for bold, italics, and more. 
 
-## Libraries
+- [Text w/ Instructions Syntax Samples](https://github.com/texti/texti.github.io/tree/master/samples)  - Idea - let's take a wikipedia page (in wikitext markup) and rewrite in markdown, latex, and yes, text w/ instructions!
 
-> Libraries for rendering Markdown documents.
 
-### C
+**Carve** (web: <https://markup-carve.github.io/carve/>, github: <https://github.com/markup-carve/carve>) - by Mark Scherer (Germany); a post-markdown lightweight markup language deriving from djot and commonmark. It distinguishes three separate inline marks - `*strong*`, `/emphasis/`, and `_underline_` - and adds math, definition lists, footnotes, citations, cross-references, and generic containers, with multiple engine implementations in JavaScript, Rust, and PHP.
 
-- [cmark](https://github.com/commonmark/cmark) - CommonMark parsing and rendering library and program in C.
-- [Hoedown](https://github.com/hoedown/hoedown) - Standards compliant, fast, secure Markdown processing library in C (Sundown fork).
-- [peg-markdown](https://github.com/jgm/peg-markdown) - An implementation of Markdown in C, using a PEG grammar.
-- [Sundown](https://github.com/vmg/sundown) - Standards compliant, fast, secure Markdown processing library in C.
+- [Carve Playground & Docs](https://markup-carve.github.io/carve/)
+- [Awesome Carve](https://github.com/markup-carve/awesome-carve) - curated list of Carve resources, tools, and libraries
 
-### Java
 
-- [commonmark-java](https://github.com/atlassian/commonmark-java) - Java implementation of CommonMark, a specification of the Markdown format.
-- [flexmark-java](https://github.com/vsch/flexmark-java) - Java Implementation of Markdown parser with source level AST.
-- [pegdown](https://github.com/sirthias/pegdown) - A pure-Java Markdown processor based on a parboiled PEG parser supporting a number of extensions.
-
-### JavaScript
-
-- [markdown-it](https://github.com/markdown-it/markdown-it) - Markdown parser, done right. 100% CommonMark support, extensions, syntax plugins & high speed.
-- [markdown-js](https://github.com/evilstreak/markdown-js) - Yet another Markdown parser, this time for JavaScript.
-- [marked](https://github.com/markedjs/marked) - Full-featured Markdown parser and compiler, written in JavaScript. Built for speed.
-- [mmarkdown](https://github.com/albinotonnina/mmarkdown) - Interpret mmd fenced code blocks in a markdown file and generate a cooler version of it.
-- [Showdown](https://github.com/showdownjs/showdown) - Showdown is a JavaScript Markdown to HTML converter, based on the original works by John Gruber.
-- [Snarkdown](https://github.com/developit/snarkdown) - Snarkdown is a dead simple 1kb Markdown parser.
+**GEML (General Expressive Markup Language)** (web: <https://geml-spec.github.io/geml/>, github: <https://github.com/geml-spec/geml>) - by the geml-spec project; a plain-text markup language that keeps Markdown's prose and replaces its many special-case blocks with one typed block, `=== type {attrs}`, for code, tables, math, diagrams, data, notes and embeds. Every block is addressable by `#id`, references are checked at build time, and a `.gemlhistory` sidecar keeps block-level history. Its reference parser also reads plain Markdown files directly.
 
-### Perl
+- [GEML Specification](https://github.com/geml-spec/geml/blob/main/spec/GEML-spec.md)
+- [GEML Playground](https://geml-spec.github.io/geml/playground/) - edit on the left, rendered on the right, with the build verdict live
 
-- [Markdown.pl](https://daringfireball.net/projects/downloads/Markdown_1.0.1.zip) :gem: _John Gruber's original Markdown library._
 
-### PHP
-
-- [commonmark](https://github.com/thephpleague/commonmark) - Highly-extensible PHP Markdown parser which fully supports the CommonMark and GFM specs.
-- [parsedown](https://github.com/erusev/parsedown) - Better Markdown Parser in PHP.
-- [php-markdown](https://github.com/michelf/php-markdown) - Parser for Markdown and Markdown Extra derived from the original Markdown.pl by John Gruber.
-
-### Python
-
-- [markdown-it-py](https://github.com/executablebooks/markdown-it-py) - Markdown parser, done right. 100% CommonMark support, extensions, syntax plugins & high speed. Now in Python!
-- [markdown2](https://github.com/trentm/python-markdown2) - Fast and complete implementation of Markdown in Python.
-- [Mistune](https://github.com/lepture/mistune) - The fastest Markdown parser in pure Python with renderer feature.
-- [PyMdown Extensions](https://facelessuser.github.io/pymdown-extensions/) - A collection of extensions for Python Markdown.
-- [Python-Markdown](https://github.com/Python-Markdown/markdown) - Python implementation of John Gruber's Markdown.
 
-### Ruby
+Yes, you can!  Add your improved beyond markdown light markup syntax / language here.
 
-- [kramdown](https://github.com/gettalong/kramdown) - kramdown is a fast, pure Ruby Markdown superset converter, using a strict syntax definition and supporting several common extensions.
-- [Redcarpet](https://github.com/vmg/redcarpet) - Redcarpet is a Ruby library for Markdown processing that smells like butterflies and popcorn.
 
-## Tools
-
-### Converters
-
-> Convert Markdown to other formats and vice versa.
-
-- [csvtomd](https://github.com/mplewis/csvtomd) - Convert your CSV files into Markdown tables. ![Mac OS X][macosx] ![Linux][linux] ![Windows][windows]
-- [Dimer Markdown](https://github.com/dimerapp/markdown) - converts Markdown to HTML or to JSON ![Globe][globe] ![Mac OS X][macosx] ![Linux][linux] ![Windows][windows]
-- [HTML To Markdown for PHP](https://github.com/thephpleague/html-to-markdown) - Convert HTML to Markdown with PHP.
-- [markdown-pdf](https://github.com/alanshaw/markdown-pdf) - Markdown to PDF converter.
-- [Markdown to PDF](https://www.markdowntopdf.com/) - Simple and useful website for converting Markdown to PDF. ![Globe][globe]
-- [Pandoc](https://pandoc.org/) - Universal document converter. ![Mac OS X][macosx] ![Linux][linux] ![Windows][windows]
-- [Torsimany](https://github.com/PolBaladas/torsimany) - Translate format-independent JSON to stylish, human-readable Markdown. ![Mac OS X][macosx] ![Linux][linux] ![Windows][windows]
-- [turndown](https://github.com/domchristie/turndown) - HTML to Markdown converter written in JavaScript.
-- [yamp](https://github.com/angrykoala/yamp) - Easy-to-use cli toolbox for markdown-related task. ![Mac OS X][macosx] ![Linux][linux] ![Windows][windows]
-- [clipboard2markdown](https://euangoddard.github.io/clipboard2markdown/) - Website to paste content and get a markdown version. Works on any modern browser with JavaScript.
+## Table of Contents
 
-### Editors
+<!--
 
-> Edit and save your Markdown documents.
+Generated with [markedpp](#markedpp). Get [nodejs](https://nodejs.org) first
 
-- [Abricotine](https://abricotine.brrd.fr/) - Lightweight markdown editor built with Electron with built-in realtime preview. ![Mac OS X][macosx] ![Linux][linux] ![Windows][windows]
-- [Caret](https://caret.io/) - Markdown Editor for Mac and PC. ![Mac OS X][macosx] ![Linux][linux] ![Windows][windows]
-- [iA Writer](https://ia.net/writer) - iA Writer is designed to provide the best writing experience on Mac OS, iOS and Android. :gem: _Really simple editor!_ ![Android OS][android-os] ![iOS Logo][ios-logo] ![Mac OS X][macosx]
-- [Let's Markdown!](https://letsmarkdown.com) - An online real-time collaborative markdown editor built on Rust. ![Globe][globe]
-- [Markdownify](https://markdownify.js.org) - A minimal Markdown Editor desktop app. ![Mac OS X][macosx] ![Linux][linux] ![Windows][windows]
-- [MarkRight](https://github.com/dvcrn/markright) - Minimalistic github flavored Markdown editor. ![Mac OS X][macosx] ![Linux][linux] ![Windows][windows]
-- [Mark Text](https://github.com/marktext/marktext/) - Next generation Markdown editor (built with Electron). ![Mac OS X][macosx] ![Linux][linux] ![Windows][windows]
-- [PileMd](https://pilemd.com/) - Markdown Note App. ![Mac OS X][macosx] ![Linux][linux] ![Windows][windows]
-- [StackEdit](https://stackedit.io/) - In-browser markdown editor. ![Globe][globe]
-- [TOAST UI Editor](https://ui.toast.com/tui-editor/) - Extensible GFM Markdown WYSIWYG Editor ![Globe][globe]
-- [Typora](https://typora.io/) - A minimal Markdown editor. ![Mac OS X][macosx] ![Linux][linux] ![Windows][windows]
-- [Notable](https://notable.md/) - The Markdown-based note-taking app that doesn't suck. ![Mac OS X][macosx] ![Linux][linux] ![Windows][windows]
-- [Boostnote](https://boostnote.io/) - A markdown editor for developers. ![Mac OS X][macosx] ![Linux][linux] ![Windows][windows]
-- [Trilium Notes](https://github.com/zadam/trilium) - A hierarchical note taking application with focus on building large personal knowledge bases. ![Mac OS X][macosx] ![Linux][linux] ![Windows][windows]
-- [Joplin](https://joplinapp.org/) - An open source note taking and to-do application with synchronisation capabilities. ![Mac OS X][macosx] ![Linux][linux] ![Windows][windows] ![iOS Logo][ios-logo] ![Android OS][android-os]
-- [Visual Studio Code](https://code.visualstudio.com/) - An open source code editor with built-in markdown preview and many markdown extensions. ![Mac OS X][macosx] ![Linux][linux] ![Windows][windows]
-- [Quiver](http://happenapps.com/) - A notebook built for programmers. ![Mac OS X][macosx] ![iOS Logo][ios-logo]
-- [Bear](https://bear.app/) - A beautiful, flexible writing app for crafting notes and prose. ![Mac OS X][macosx] ![iOS Logo][ios-logo]
-- [Obsidian](https://obsidian.md/) - Notebook editor with Mermaid support ![Mac OS X][macosx] ![Linux][linux] ![Windows][windows]
-- [Bangle.io](https://bangle.io/) - A Notion like note taking webapp where data is saved in Markdown format locally. ![Globe][globe]
+1. $ npm i -g markedpp
+2. $ markedpp --github -o README.md README.md
 
-### Linters
+-->
 
-> Flag and standarize your Markdown documents.
+<!-- !toc (minlevel=2 omit="Table of Contents") -->
 
-- [Markdown Lint Tool](https://github.com/markdownlint/markdownlint) - Tool to check Markdown files and flag style issues.
-- [Markdownlint](https://github.com/igorshubovych/markdownlint-cli) - Node.js style checker and lint tool for Markdown/CommonMark files.
-- [remark-lint](https://github.com/remarkjs/remark-lint) - Markdown code style linter.
-- [textlint](https://textlint.github.io/) - Pluggable linting tool for text and markdown.
-- [markdownlint](https://github.com/DavidAnson/vscode-markdownlint) - Markdown linting and style checking for Visual Studio Code.
+* [Markdown](#markdown)
+* [Markdown Syntax Extensions](#markdown-syntax-extensions)
+  * [MultiMarkdown (MMD)](#multimarkdown-mmd)
+  * [Markdown Extra](#markdown-extra)
+  * [Markdown Extended (MDE)](#markdown-extended-mde)
+* [Manuscripts](#manuscripts)
+* [CommonMark](#commonmark)
+* [GitHub Flavored Markdown (GFM)](#github-flavored-markdown-gfm)
+* [Vanilla Flavored Markdown (VFMD)](#vanilla-flavored-markdown-vfmd)
+* [Markdown Documentation](#markdown-documentation)
+  * [Markdown Cheatsheets / Quick References](#markdown-cheatsheets--quick-references)
+  * [Markdown Getting Started Guides / Tutorials](#markdown-getting-started-guides--tutorials)
+* [Markdown Building Blocks](#markdown-building-blocks)
+  * [Markdown Libraries & Tools](#markdown-libraries--tools)
+  * [Babelmark](#babelmark)
+  * [Markdown Style Guides / Best Practices](#markdown-style-guides--best-practices)
+  * [Markdown Lint / Style Rule Checker](#markdown-lint--style-rule-checker)
+  * [Markdown Web Components / Custom Elements](#markdown-web-components--custom-elements)
+  * [Markdown to Website / Blog](#markdown-to-website--blog)
+  * [Markdown to Email](#markdown-to-email)
+  * [Markdown to Presentation / Slideshow](#markdown-to-presentation--slideshow)
+  * [Markdown to Portable Document Format (PDF)](#markdown-to-portable-document-format-pdf)
+  * [Markdown Styles / Documents / Pages](#markdown-styles--documents--pages)
+  * [Markdown to Books](#markdown-to-books)
+  * [Markdown to Table of Contents (TOC)](#markdown-to-table-of-contents-toc)
+  * [Markdown to Markdown Pre-Processor](#markdown-to-markdown-pre-processor)
+  * [Markdown to Notion](#markdown-to-notion)
+* [Convert to Markdown Tools](#convert-to-markdown-tools)
+  * [Microsoft Word to Markdown](#microsoft-word-to-markdown)
+  * [PDF / Office Documents to Markdown](#pdf--office-documents-to-markdown)
+  * [WordStar to Markdown](#wordstar-to-markdown)
+  * [Hypertext Markup Language (HTML) to Markdown](#hypertext-markup-language-html-to-markdown)
+  * [Source Code to Markdown](#source-code-to-markdown)
+  * [Technical Documentation to Markdown](#technical-documentation-to-markdown)
+  * [Screencast to Markdown](#screencast-to-markdown)
+  * [JSON to Markdown](#json-to-markdown)
+* [Book Services](#book-services)
+* [Markdown protocol](#protocol)
+* [Articles](#articles)
+* [Meta](#meta)
 
-### Miscellaneous
 
-> Tools which let you edit, convert, export, _et al._ your Markdown documents.
+<!-- toc! -->
 
-- [Dillinger](https://dillinger.io/) - Dillinger is a cloud-enabled, mobile-ready, offline-storage, AngularJS powered HTML5 Markdown editor. ![Globe][globe]
-- [GitDown](https://github.com/gajus/gitdown) – GitHub's Markdown preprocessor. :octocat:
-- [HackMD](https://hackmd.io) - HackMD lets you create realtime collaborative Markdown notes on all platforms. ![Globe][globe]
-- [Laverna](https://laverna.cc/) - Laverna is a JavaScript note taking application with Markdown editor and encryption support. :gem: _Markdown notes with encryption!_ ![Globe][globe] ![Mac OS X][macosx] ![Linux][linux] ![Windows][windows]
-- [Markable.in](https://markable.in/) - Remarkable Markdown Editor. ![Globe][globe]
-- [markcat](https://github.com/BubuAnabelas/markcat) - Markdown files terminal viewer. :gem: _`cat` with Markdown highlight._ ![Mac OS X][macosx] ![Linux][linux] ![Windows][windows]
-- [Markdown Magic](https://github.com/DavidWells/markdown-magic) - Automatically format markdown files and sync external docs/src code
-- [Markdown Tables Generator](https://www.tablesgenerator.com/markdown_tables) - Visual Markdown table builder with CSV importing support. ![Globe][globe]
-- [mdformat](https://github.com/executablebooks/mdformat) - CommonMark compliant Markdown formatter ![Mac OS X][macosx] ![Linux][linux] ![Windows][windows]
-- [remark](https://remark.js.org/) - Markdown processor powered by plugins
-- [Socrates](https://socrates.io/) - Serveless realtime Markdown editor and viewer, etherpad-like. ![Globe][globe]
-- [termd](https://github.com/dephraiim/termd) - Markdown renderer for the terminal with syntax highlighting. ![Mac OS X][macosx] ![Linux][linux] ![Windows][windows]
+## Markdown
 
+_email-style writing for the web by John Gruber and Aaron Swartz_ 
 
-### Presentations
+- **Markdown** (web: [daringfireball.net/projects/markdown](http://daringfireball.net/projects/markdown)) - original Markdown syntax write-up and processor in Perl by John Gruber; no longer maintained (last update in December 2004)
 
-> Create and edit your slides presentations with Markdown.
+History / Genesis
 
-- [gitpitch](https://github.com/gitpitch/gitpitch/) - Markdown Presentations For Everyone on GitHub, GitLab, Bitbucket, GitBucket, Gitea, and Gogs. ![Globe][globe]
-- [hacker-slides](https://github.com/msoedov/hacker-slides) - Minimal UI for building presentation slides from markdown. ![Mac OS X][macosx] ![Linux][linux]
-- [Marp](https://marp.app/) - Markdown presentation ecosystem. :gem: _CLI, Web, IDE plugin and more to convert Markdown into various formats_ ![Mac OS][macosx] ![Linux][linux] ![Windows][windows]
-- [mdp](https://github.com/visit1985/mdp) - Command-line based Markdown presentation tool. :gem: _Like PowerPoint and Vim but with Markdown!_ ![Mac OS X][macosx] ![Linux][linux]
-- [remark](https://remarkjs.com) - A simple, in-browser, Markdown-driven slideshow tool targeted at people who know their way around HTML and CSS. ![Globe][globe]
-- [reveal.js](https://revealjs.com) - Open source HTML presentation framework with Markdown support ![Mac OS X][macosx] ![Linux][linux] ![Windows][windows]
+- [Introducing Markdown](http://daringfireball.net/2004/03/introducing_markdown) by John Gruber - March 15, 2004
 
-## Services
+  >   I've written a text-to-HTML formatting tool called Markdown, which is now available for download.
+  > Markdown allows web writers to compose text using a simple, readable, plain text formatting syntax;
+  > Markdown takes care of translating it to valid XHTML (or, if you prefer, HTML).
 
-> Different services which take advantage of Markdown.
+- [Dive into Markdown](http://daringfireball.net/2004/03/dive_into_markdown) by John Gruber - March 19, 2004
 
-- [Daux.io](https://daux.io) - Daux.io is an documentation generator that uses a simple folder structure and Markdown files to create custom documentation on the fly.
-- [Dimer](https://dimerapp.com/) - Dimer generates a clean and beautiful documentation website from Markdown. ![Globe][globe]
-- [GitBook](https://www.gitbook.com/?t=1) - GitBook is a modern publishing toolchain. Making both writing and collaboration easy.
-- [GitPrint](https://gitprint.com/) - Easily print GitHub Markdown. ![Globe][globe]
+  >  You don't need to "preview" an email before you send it -- you write it, you read it, you edit it, right there.
+  >
+  >  In fact, I love writing email. Email is my favorite writing medium. I've sent over 16,000 emails in the last five years. 
+  > The conventions of plain text email allow me to express myself clearly and precisely, without ever getting in my way.
+  >
+  > Thus, Markdown. Email-style writing for the web.
 
-## Resources
+- [Markdown](http://www.aaronsw.com/weblog/001189) by Aaron Swartz - March 22, 2004
 
-### Documentation
+  >    For months I've been working with John Gruber on a new project. The idea was to make writing simple web pages,
+  > and especially weblog entries, as easy as writing an email, by allowing you to use much the same syntax and converting it 
+  > automatically into HTML.
+  >
+  >   Together we pored over the syntax details from top to bottom, trying to develop the perfect format, 
+  > and I think we've got something pretty darn great. We've tested it extensively: on our blogs, in my comments form, in our emails.
 
-> Documentation and useful information about Markdown.
 
-- [CommonMark](https://commonmark.org/) - Strongly defined, highly compatible specification of Markdown.
-- [GitHub Flavored Markdown Specifications](https://github.github.com/gfm/) - The formal spec for GitHub's Markdown, based on CommonMark.
-- [Original Specifications](https://daringfireball.net/projects/markdown/) :gem: _The place to start with Markdown!_
-- [Pandoc’s Markdown](https://pandoc.org/MANUAL.html#pandocs-markdown) - [Pandoc](https://pandoc.org/) has its own, powerful markdown implementation. It consists of several addional extensions.
-- [ScholarlyMarkdown](http://scholarlymarkdown.com/) - ScholarlyMarkdown is a syntax/standard/best-practice of scholarly and academic communication that is web-first, semantic XML-second, and LaTeX/Word a close third.
-- [Stack Overflow Markdown Documentation (archived)](https://web.archive.org/web/20160724152503/https://stackoverflow.com/documentation/markdown/topics) - Well organized Markdown documentation.
-- [Stack Overflow Markdown Questions](https://stackoverflow.com/questions/tagged/markdown) - Highest voted Markdown questions on Stack Overflow.
-- [The text/markdown Media Type (RFC7763)](https://tools.ietf.org/html/rfc7763) - This document registers the `text/markdown` media type for use with Markdown, a family of plain-text formatting syntaxes.
-- [Wikipedia Article](https://en.wikipedia.org/wiki/Markdown)
+<!--
+- [**Talk**](https://pairlist6.pair.net/mailman/listinfo/markdown-discuss) - markdown-discuss mailing list
+    no longer in use
+  -->
 
-### Tutorials
+Documentation
 
-> Useful links and tutorials.
+- [**Markdown @ Wikipedia**](http://en.wikipedia.org/wiki/Markdown)
 
-- [GitHub's Mastering Markdown](https://guides.github.com/features/mastering-markdown/)
-- [how-to-markdown](https://github.com/workshopper/how-to-markdown) - This workshopper will teach you how to use Markdown.
-- [Interactive Markdown Tutorial](https://www.markdowntutorial.com/)
-- [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) :gem: _Where to look when you don't remember the syntax!_
-- [Markdown Guide](https://www.markdownguide.org) - A concise, barebones guide to Markdown.
 
----
+## Markdown Syntax Extensions
 
-_[Icon pack by Icons8](https://icons8.com)_
+- [SmartyPants](http://daringfireball.net/projects/smartypants) -  convert (c) into ?, "" into ?, etc. 
+- [Emojis](http://www.emoji-cheat-sheet.com) - [:octocat:](https://github.com/arvida/emoji-cheat-sheet.com)
+- [CriticMarkup](http://criticmarkup.com) - [:octocat:](https://github.com/CriticMarkup)
+- [GitHub Flavored Markup (GFM)](https://help.github.com/articles/github-flavored-markdown) - @mention, to do lists w/ [ ] and [x], etc.
 
-## License
+### MultiMarkdown (MMD)
 
-[![CC0](http://mirrors.creativecommons.org/presskit/buttons/88x31/svg/cc-zero.svg)](https://creativecommons.org/publicdomain/zero/1.0/)
+- [MultiMarkdown (MMD)](http://fletcherpenney.net/multimarkdown) - Markdown extensions by Fletcher Penney adding footnotes, tables, definition lists, document metadata (e.g. title, author, date, etc.) and more; first added to MultiMarkdown.pl
+    - [Cheatsheet](https://rawgit.com/fletcher/human-markdown-reference/master/index.html)  - syntax quick reference
+    - [Test Suite :octocat:](https://github.com/fletcher/MMD-Test-Suite)
+- [MultiMarkdown.pl :octocat:](https://github.com/fletcher/MultiMarkdown) - historic MultiMarkdown.pl code; converter script in Perl (last update in Jan 2011)
 
-To the extent possible under law, [Joaquín Serna](https://github.com/BubuAnabelas) has waived all copyright and related or neighboring rights to this work.
+### Markdown Extra
 
-<!--Definitions-->
+- [Markdown Extra](https://michelf.ca/projects/php-markdown/extra/) - Markdown extensions by Michel Fortin; first added to PHP Markdown (Extra)
+- [Dingus](https://michelf.ca/projects/php-markdown/dingus/)  - try Markdown Extra in your browser
 
-[globe]: https://img.icons8.com/color/24/globe.png 'Globe'
-[android-os]: https://img.icons8.com/color/24/android-os.png 'Android OS'
-[ios-logo]: https://img.icons8.com/color/24/ios-logo.png 'iOS Logo'
-[macosx]: https://img.icons8.com/color/24/mac-logo.png 'Mac OS X'
-[linux]: https://img.icons8.com/color/24//linux--v1.png 'Linux'
-[windows]: https://img.icons8.com/color/24/windows-11.png 'Windows'
+### Markdown Extended (MDE)
+
+- [Markdown Extended (MDE) @ aboutmde.org](http://aboutmde.org)
+    - [Spec](http://manifest.aboutmde.org)
+    - [Cheatsheet](http://cheatsheet.aboutmde.org/) - syntax quick reference; examples side-by-side
+    - [Dingus](http://dingus.aboutmde.org) - try Markdown Extended in your browser
+- [Code :octocat:](https://github.com/piwi/markdown-extended) - converter script in PHP
+
+
+## Manuscripts
+
+_Free book format for Markdown_
+
+**Manuscripts**
+(web: [`manuscripts.github.io`](http://manuscripts.github.io),
+ github: [`manuscripts`](https://github.com/manuscripts)) -
+adds book.yml for book (meta) info e.g. title, author, publisher, year etc.
+and contents.yml for table of contents and file structure
+
+- Manuscripts Book Starter Kit (github: [`manuscripts/book-starter`](https://github.com/manuscripts/book-starter))
+
+
+
+## CommonMark
+
+_A strongly specified, highly compatible implementation of Markdown_
+
+**CommonMark**
+(web: [`commonmark.org`](http://commonmark.org))
+
+- Spec (web: [`spec.commonmark.org`](http://spec.commonmark.org)) - Edited by John MacFarlane 
+- Dingus (web: [`spec.commonmark.org/dingus`](http://spec.commonmark.org/dingus)) - try CommonMark in your browser
+- Talk (web: [`talk.commonmark.org`](http://talk.commonmark.org))
+- Code (github: [`jgm/CommonMark`](https://github.com/jgm/CommonMark)) - spec and reference code in JavaScript and C
+
+## GitHub Flavored Markdown (GFM)
+
+_CommonMark with GitHub Extensions_
+
+**GitHub Flavored Markdown (GFM)**
+
+- Spec (web: [`github.github.com/gfm`](https://github.github.com/gfm))
+- Code (github: [`github/cmark`](https://github.com/github/cmark) - reference code in C (fork of cmark w/ extensions)
+
+Extensions include:
+
+Leaf Blocks: Tables ++ 
+Container Blocks: Task list items ++
+Inlines: Strikethrough; Autolinks; Disallowed Raw HTML
+
+
+## Vanilla Flavored Markdown (VFMD)
+
+_A variant of Markdown with an unambiguous specification of its syntax_ 
+
+**Vanilla Flavored Markdown (VFMD)**
+(web: [`vfmd.org`](http://www.vfmd.org), github: [`vfmd`](https://github.com/vfmd))
+
+- Spec (web: [vfmd.org/vfmd-spec/specification](http://www.vfmd.org/vfmd-spec/specification)) - Edited by Roopesh Chander
+- Code (github: [`vfmd/vfmd-src`](https://github.com/vfmd/vfmd-src)) - reference code in C++
+
+Differences include:
+
+Intra-word emphasis;
+Simplified reference link/image syntax;
+Lists and the 4-space rule;
+Better automatic link detection;
+Double blank lines as end of blocks;
+Starting number in lists; 
+Misnested constructs; 
+Including raw HTML;
+Character encoding
+
+
+
+## Markdown Documentation
+
+### Markdown Cheatsheets / Quick References
+
+- [Markdown Cheatsheet :octocat:](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
+- [The Ultimate Markdown Cheat Sheet](https://github.com/lifeparticle/Markdown-Cheatsheet)
+- [Markdown Cheat Sheet & Flavor Compatibility Matrix](https://www.markdowntools.io/cheat-sheet) - Cross-platform cheat sheet with GitHub / Obsidian / Jupyter / Discord / Slack support states per feature, plus printable PDFs.
+
+### Markdown Getting Started Guides / Tutorials
+
+- [Markdown Tutorial](http://markdowntutorial.com) - [:octocat:](https://github.com/gjtorikian/markdowntutorial.com)
+- [Mastering Markdown @ GitHub Guides](https://guides.github.com/features/mastering-markdown)
+- [Markdown Basics @ GitHub Help](https://help.github.com/articles/markdown-basics)
+- [Markdown Guide](https://www.markdownguide.org/)
+
+
+
+## Markdown Building Blocks
+
+### Markdown Libraries & Tools
+
+<a name="pandoc"></a>
+
+**Pandoc**
+(web: [`pandoc.org`](http://pandoc.org),
+ github: [github.com/jgm/pandoc](https://github.com/jgm/pandoc)) -
+a universal document converter (in Haskell)
+
+
+**kramdown**
+(web: [`kramdown.gettalong.org`](http://kramdown.gettalong.org),
+ github: [`gettalong/kramdown`](https://github.com/gettalong/kramdown),
+ gem: [`kramdown`](https://rubygems.org/gems/kramdown)) -
+markdown library & command line tool (in Ruby)
+
+
+**Markdown Extended (MDE)**
+(github: [`e-picas/markdown-extended`](https://github.com/e-picas/markdown-extended)
+- transform plain text input (strings or files) in various output formats (in PHP)
+
+<a name="marked"></a>
+
+**marked**
+(web: [`marked.js.org`](https://marked.js.org), github: [marked :octocat:](https://github.com/markedjs/marked)) a markdown parser and compiler. Built for speed. (In Javascript)
+
+
+<a name="markdown-it"></a>
+
+**markdown-it**
+(web: [`markdown-it.github.io`](https://markdown-it.github.io/), github: [markdown-it :octocat:](https://github.com/markdown-it/markdown-it)) Javascript markdown parser. 100% CommonMark support, extensions, syntax plugins & high speed.
+Is extensible with [plugins](https://www.npmjs.com/search?q=keywords:markdown-it-plugin).
+
+**concat-md**
+([npm](https://www.npmjs.com/package/concat-md), [github](https://github.com/ozum/concat-md#readme)) CLI and API to concatenate markdown files and modify as necessary. Also adds titles from FrontMatter, file names and directory names, decreases level of existing titles to comply with added titles.
+
+**mdcode**
+(github: [mdcode](https://github.com/szkiba/mdcode)) Markdown code block authoring tool. It enables testable code blocks, with two-way synchronization between code blocks and source files.
+
+**quikdown**
+  ([web](https://deftio.github.io/quikdown/), [npm](https://www.npmjs.com/package/quikdown), [github 
+  :octocat:](https://github.com/deftio/quikdown)) Lightweight (10KB) markdown parser with bidirectional
+  HTML conversion, built-in XSS protection, and extensible plugin system. Zero dependencies, works in browser and
+  Node.js. Features include drop-in editor component, TypeScript support, and lazy linefeeds for chat applications.
+  ([Live Parser Demo](https://deftio.github.io/quikdown/examples/quikdown-live.html), [Editor 
+  Demo](https://deftio.github.io/quikdown/examples/qde/))
+
+**mq**
+(web: [mqlang.org](https://mqlang.org), github: [mq :octocat:](https://github.com/harehare/mq)) A command-line tool that processes Markdown using a syntax similar to jq. Written in Rust, allowing you to easily slice, filter, map, and transform structured data in Markdown files.
+
+**markdown-to-jsx**
+(web: [markdown-to-jsx.quantizor.dev](https://markdown-to-jsx.quantizor.dev), github: [markdown-to-jsx :octocat:](https://github.com/quantizor/markdown-to-jsx), [npm](https://www.npmjs.com/package/markdown-to-jsx)) A very fast and versatile markdown toolchain. Output to AST, React, React Native, SolidJS, Vue, HTML, and more!
+
+### Babelmark
+
+- [Babelmark 2]() - a tool for comparing the output of various implementations of Markdown syntax
+    - [Babelmark 2 F.A.Q.](http://johnmacfarlane.net/babelmark2/faq.html) - frequently asked questions (and answers) e.g. ... ??
+
+
+### Markdown Style Guides / Best Practices
+
+to be done
+
+### Markdown Lint / Style Rule Checker
+
+- [ai-slop-detect](https://github.com/antydizajn/ai-slop-detect) - Free Python CLI that flags AI-generated text patterns in markdown and prose (em-dashes, ChatGPT phrases like "leverage" / "cutting-edge", punctuation density, zero-width unicode tells). EN+PL, MIT, GitHub Action included.
+- [darnlink](https://github.com/txemi/darnlink) - Python CLI that repairs Markdown links whose target moved (anchored by a UUID) and robustifies plain ones; report-only pre-commit/CI gate. GitHub Action & pre-commit hook included.
+- [markdownlint](https://github.com/DavidAnson/markdownlint) - A Node.js style checker and lint tool for Markdown/CommonMark files offering a good set of defaults. Allows for customization.
+- [mdformat](https://github.com/executablebooks/mdformat) - CommonMark compliant Markdown formatter
+- [mdlint]() to be done
+- [mdsf](https://github.com/hougesen/mdsf) - Use your preferred code formatter to format markdown code snippets.
+- [vscode-markdownlint](https://github.com/DavidAnson/vscode-markdownlint) - [Visual Studio Code Plugin](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint) enabling in-place linting of markdown files.
+- [mado](https://github.com/akiomik/mado) - A fast Markdown linter written in Rust. GitHub Actions are supported.
+
+
+### Markdown Web Components / Custom Elements
+
+- [Markdown-Tag](https://github.com/MarketingPipeline/Markdown-Tag) - Render Markdown to HTML on any website using a md tag
+- [`<x-markdown>`]() - to be done
+
+
+
+
+### Markdown to Website / Blog
+
+**Jekyll**
+(web: [`jekyllrb.com`](http://jekyllrb.com),
+ github: [`jekyll/jekyll` :octocat:](https://github.com/jekyll/jekyll),
+ gem: [`jekyll` :gem:](https://rubygems.org/gems/jekyll)) -
+transform your plain text into static websites and blogs (in Ruby)
+
+**Middleman**
+(web: [`middlemanapp.com`](https://middlemanapp.com),
+ github: [`middleman/middleman` :octocat:](https://github.com/middleman/middleman),
+ gem: [`middleman` :gem:](https://rubygems.org/gems/middleman)) -
+makes developing websites simple (in Ruby)
+
+**Slate** (github: [lord/slate :octocat:](https://github.com/lord/slate)) - beautiful API documentation, based on **Middleman**
+
+**Shins** (github: [`Mermade/shins` :octocat:](https://github.com/Mermade/shins), npm: [`shins`](https://www.npmjs.com/package/shins)) – beautiful API documentation, with node.js (port of **Slate**)
+
+**md-fileserver** (github: [md-fileserver :octocat:](https://github.com/commenthol/md-fileserver), npm: [`md-fileserver`](https://www.npmjs.com/package/md-fileserver)) – View markdown files locally in browser.
+
+**Compiiile** (github: [@compiiile/compiiile :octocat:](https://github.com/compiiile/compiiile), npm: [`@compiiile/compiiile`](https://www.npmjs.com/package/@compiiile/compiiile)) – Preview and serve folders containing Markdown files with full-text search and presentation slides.
+
+**ZenMD** (github: [`@randomor/zenmd`](https://github.com/randomor/zenmd), npm: [`zenmd`](https://www.npmjs.com/package/zenmd) – The simplest way to convert a folder of Markdown files into a site of HTML files.
+
+**markdown-pages.js** (github: [markdown-pages.js :octocat:](https://github.com/dandalpiaz/markdown-pages.js/) - Client-side rendering of Markdown website
+
+### Markdown to Email
+
+**Markdown Here**
+(web: [`markdown-here.com`](http://markdown-here.com),
+ github: [`adam-p/markdown-here`](https://github.com/adam-p/markdown-here)) -
+a browser extension for rendering email written in Markdown;
+available for Chrome, Firefox, Safari, Thunderbird, and more;
+besides email also works with Evernote, Google Groups, Blogger, and more
+
+
+
+### Markdown to Presentation / Slideshow
+
+**Slide Show (S9)**
+(web: [`slideshow-s9.github.io`](http://slideshow-s9.github.io),
+ github: [`slideshow-s9/slideshow`](https://github.com/slideshow-s9),
+ gem: [`slideshow`](https://rubygems.org/gems/slideshow)) -
+a free web alternative to PowerPoint and Keynote in Ruby
+
+- Templates (github: [`slideshow-templates`](https://github.com/slideshow-templates))
+
+**Slidev** (github: [`slidev`](http://github.com/slidevjs/slidev)) - Slidev allows you to create slideshows from a markdown file. You can include HTML and Vue components in the markdown.
+
+**Markpress** (github: [`markpress`](https://github.com/gamell/markpress)) - A command line tool and node package to convert markdown files into self-contained [impressjs](https://github.com/impress/impress.js/) html presentations. [Example](https://gamell.github.io/markpress) 
+
+**nodePPT** (github: [`nodePPT`](https://github.com/ksky521/nodePPT)) - A web presentation tool supporting markdown based on GFM.
+
+**Deckset** (website: [Deckset](http://www.decksetapp.com)) – A macOS desktop app that renders Markdown presentations in beautifully designed templates.
+
+**GitPitch** (website: [GitPitch](http://gitpitch.com/), github: [gitpitch :octocat:](https://github.com/gitpitch/gitpitch/)) – Markdown Presentations For Everyone on GitHub, GitLab, Bitbucket, GitBucket, Gitea, and Gogs. [Example](https://gitpitch.com/gitpitch/gitpitch/master)
+
+**zoetic** (github [zoetic](https://github.com/kantord/zoetic)) - Markdown presentations with your webcam as your background while presenting
+
+**markdeep-slides** (github: [markdeep-slides](https://github.com/doersino/markdeep-slides)) - Browser-side rendering of Markdown as slide deck
+
+### Markdown to Portable Document Format (PDF)
+
+- [markdown-pdf :octocat:](https://github.com/alanshaw/markdown-pdf), [(npm Package)](https://www.npmjs.com/package/markdown-pdf) -  converts Markdown files to PDFs
+- [em-dee-pdf :octocat:](https://github.com/brendandebeasi/em-dee-pdf) - converts Markdown files to styled PDFs using Typst with 18 built-in themes, LaTeX math, and syntax highlighting
+- [Resumx](https://resumx.dev) [:octocat:](https://github.com/resumx/resumx) - Markdown resume renderer with auto page-fitting that outputs PDF, HTML, DOCX, and PNG
+
+
+### Markdown Styles / Documents / Pages
+
+**The Zen of Page Designs**
+(github: [`pagedesigns`](https://github.com/pagedesigns))
+
+
+### Markdown to Books
+
+**The Zen of Book Designs**
+(github: [`bookdesigns`](https://github.com/bookdesigns))
+
+
+
+**Hyper Book (H9)** [:octocat:](https://github.com/hybook), [:gem:](https://rubygems.org/gems/hybook)
+
+- [Templates :octocat:](https://github.com/book-templates)
+
+
+
+### Markdown to Table of Contents (TOC)
+
+* **Generate a markdown table of contents (TOC) with [remarkable](https://github.com/jonschlinkert/remarkable)**
+  (github: [`markdown-toc`](https://github.com/jonschlinkert/markdown-toc)) 
+* [markedpp](#markedpp) Markdown to Markdown Pre-Processor
+* [mdtoc :octocat:](https://github.com/tallclair/mdtoc) - Standalone TOC generator designed for CI
+
+
+### Markdown to Markdown Pre-Processor
+
+<a name="markedpp"></a>
+
+* **markedpp** (github: [markedpp :octocat:](https://github.com/commenthol/markedpp)) adds support for table-of-contents (TOC), numbered headings, includes other markdown files and/or create reference lists for use with different markdown processors like [marked](#marked), [markdown-it](#markdown-it), [pandoc](#pandoc) or for hosting on github.com, gitlab.com, bitbucket.org or ghost.org.
+
+### Markdown to Notion
+
+* [mk-notes](https://github.com/Myastr0/mk-notes) - Sync your local Markdown files seamlessly to Notion. Keep writing in Markdown and let mk-notes handle the integration.
+
+
+## Convert to Markdown Tools
+
+### Microsoft Word to Markdown
+
+- [word-to-markdowm gem :octocat:](https://github.com/benbalter/word-to-markdown), [:gem:](https://rubygems.org/gems/word-to-markdown) - "liberate" content from the jail that is Microsoft Word documents; converts to plain-text Markdown
+
+### PDF / Office Documents to Markdown
+
+- [doc2md :octocat:](https://github.com/orangefineblue/doc2md) - high-fidelity PDF, DOCX, and PPTX to Markdown conversion pipeline with multi-extractor support (pymupdf, pdfplumber, MinerU), image extraction, per-image classification, and multi-stage quality control
+
+- [file2markdown.ai](https://file2markdown.ai) - AI-powered converter that turns PDFs, Word docs, and images into clean structured Markdown. Optimized for RAG pipelines and Obsidian. Free tier available (20 conversions/day).
+
+### WordStar to Markdown
+- [ws2markdown](https://code.rosaelefanten.org/ws2markdown) - convert WordStar (.ws) into Markdown (.md) files
+
+### Various Note Formats to Markdown
+
+- [Jimmy :octocat:](https://github.com/marph91/jimmy) - Convert your notes to Markdown
+
+### LinkedIn / Career Data to Markdown
+
+- [linkedin2md :octocat:](https://github.com/juanmanueldaza/linkedin2md), [:snake:](https://pypi.org/project/linkedin2md/) - zero-dependency Python CLI to convert LinkedIn data export ZIPs into clean, structured Markdown files optimized for LLM analysis; optional PDF resume generation via `--pdf`
+
+### Hypertext Markup Language (HTML) to Markdown
+
+Ruby
+
+- [reverse_markdown :octocat:](https://github.com/xijo/reverse_markdown), [:gem:](https://rubygems.org/gems/reverse_markdown) - map simple HTML back into markdown
+- [html2markdown :octocat:](https://github.com/29decibel/html2markdown), [:gem:](https://rubygems.org/gems/html2markdown) - simple and flexible HTML to markdown converter
+- [hypertextmarkdown :octocat:](https://github.com/jcheatham/hypertextmarkdown), [:gem:](https://rubygems.org/gems/hypertextmarkdown) - HTML to markdown converter
+- [html2md :octocat:](https://github.com/pmorton/html2md), [:gem:](https://rubygems.org/gems/html2md) - converts basic HTML to markdown 
+- [unmarkdown :octocat:](https://github.com/soffes/unmarkdown), [:gem:](https://rubygems.org/gems/unmarkdown) - convert HTML to Markdown
+- [upmark :octocat:](https://github.com/conversation/upmark), [:gem:](https://rubygems.org/gems/upmark) - a HTML to Markdown converter
+- [remark :octocat:](https://github.com/mislav/remark) - HTML to Markdown converter in Ruby
+
+
+JavaScript / Node.js
+
+- [turndown :octocat:](https://github.com/domchristie/turndown), [(npm Package)](https://www.npmjs.com/package/turndown), [(Demo site)](http://domchristie.github.io/turndown/)  - a HTML to Markdown converter in JavaScript (formerly known as `to-markdown`)
+- [html2markdown :octocat:](https://github.com/alexgorbatchev/html2markdown),  [(npm Package)](https://www.npmjs.com/package/html2markdown) -  converting HTML to Markdown
+- [Markitdown](http://markitdown.medusis.com) - A client-side web app that lets you paste formatted text from a webpage (e.g with links intact) and recieve markdown output.
+  - [Markitdown.medusis.com :octocat:](https://github.com/bambax/markitdown.medusis.com) - A client-side web app for converting rich text to markdown
+- [CopyMD :octocat:](https://github.com/zcag/copymd) - Embeddable widget that adds a "Copy as Markdown" button to any website. One script tag lets readers copy page content as clean Markdown.
+
+More
+
+- [heckyesmarkdown.com](http://heckyesmarkdown.com) - instantly convert a webpage to markdown; the service presents a simple interface that converts any reasonable web page into markdown (note: the service seems to use the Readability API to remove all the non-content cruft from the source page before proceeding with markdownification)
+- [Markdown Web Clipper :octocat:](https://github.com/Tigrandza/markdown-web-clipper) - free, MIT-licensed Chrome extension that converts any webpage to clean Markdown (tables, code blocks, math, footnotes) and saves it to a local folder, GitHub Gist, or the clipboard
+
+### Source Code to Markdown
+
+Generate API documentation from source code in Markdown, then host it on the web using one of the many [Markdown to Website](#markdown-to-website--blog) tools to host and serve it.
+
+- [widdershins :octocat:](https://github.com/Mermade/widdershins) - turn [OpenAPI/Swagger](https://www.openapis.org) REST API documentation to Markdown
+- [Moxygen :octocat:](https://github.com/sourcey/moxygen) - [Doxygen](http://www.stack.nl/~dimitri/doxygen/) (C++, but also supports other popular programming languages such as C, Objective-C, C#, PHP, Java, Python, IDL , Fortran, VHDL, Tcl, and to some extent D.) documentation to Markdown
+- [raml2html/markdown-theme :octocat:](https://github.com/raml2html/markdown-theme) - turn [RAML](http://raml.org) REST API documentation to Markdown using raml2html
+- [jsdoc-to-markdown :octocat:](https://github.com/jsdoc2md/jsdoc-to-markdown) - JavaScript API documentation via JSDoc to Markdown
+- [mmarkdown :octocat:](https://github.com/albinotonnina/mmarkdown) - Interpret mmd fenced code blocks in a markdown file and generate a cooler version of it.
+- [markpush](https://gitlab.com/alex20465/markpush) - Firefox/Chrome Extension to push Articles on git repositories in a readable markdown format.
+
+### Technical Documentation to Markdown
+
+- [dita-ot-markdown](https://github.com/jelovirt/dita-ot-markdown) – converts DITA into Markdown, integrates with standard DITA OT toolchain 
+
+### Screencast to Markdown
+
+- [Paircast](https://paircast.io) - Combines desktop video, git diffs, and voice transcriptions into markdown documentation.
+
+### JSON to Markdown
+
+JavaScript / Node.js
+
+- [json2md](https://github.com/IonicaBizau/json2md) - A JSON to Markdown converter.
+- [ts-markdown](https://github.com/kgar/ts-markdown) - An extensible TypeScript markdown generator that takes JSON and creates a markdown document.
+
+## Book Services
+
+- [Softcover.io](https://www.softcover.io) - publish from the comfort of your command-line by Michael Hartl et al 
+    - [Softcover :octocat:](https://github.com/softcover/softcover), [:gem:](https://rubygems.org/gems/softcover) - a command line tool for book generation, building, and publishing 
+- [GitBook.com](https://www.gitbook.com)  - write and publish books with Markdown and Git by Samy Pessé et al
+    - [GitBook :octocat:](https://github.com/GitbookIO/gitbook) - a command line tool (and Node.js library) for building beautiful books using GitHub/Git and Markdown (or AsciiDoc)
+    
+<!-- break -->
+
+- [Bitbooks.cc (discontinued; archived)](https://github.com/bitbooks) - Bitbooks turns a repo full of markdown files into a handsome, hosted, online book - by Bryan Braun
+    - [Franklin :octocat:](https://github.com/bryanbraun/franklin) - a static-site framework, optimized for online books
+
+## Protocol
+
+- [demarkus](https://github.com/latebit-io/demarkus) - De-centralized markup for us: a markdown protocol, server, browser, and tools
+- [MarkWay](https://github.com/RaysunKR/MarkWay) - An HTTP protocol standard designed for AI Agents, enabling machines to browse the web more intelligently.
+
+
+## Articles
+
+- [Why You Shouldn't Use Markdown for Documentation](http://ericholscher.com/blog/2016/mar/15/dont-use-markdown-for-technical-docs) by Eric Holscher, March 2016
+- [Stop Using Markdown For Documentation](https://mister-gold.pro/posts/en/asciidoc-vs-markdown/) by Anton Zolotukhin, April 2018
+- [Why isn't there a formal grammar for Markdown?](http://roopc.net/posts/2014/markdown-cfg) by Roopesh Chander, September 2014
+- [The Ultimate Markdown Cheat Sheet](https://medium.com/towards-data-science/the-ultimate-markdown-cheat-sheet-3d3976b31a0)
+
+
+## Meta
+
+**License**
+
+The awesome list is dedicated to the public domain. Use it as you please with no restrictions whatsoever.
+
+**Questions? Comments?**
+
+Send them along to the markdown-discuss mailing list. Thanks!
+
+- [OneMira C1](https://onemira.com/products/c1) - Standalone AI voice recorder with Local AI summaries, automatic Speaker ID across 99 languages, Zero Cloud privacy ($0/month subscription), Google Native OKF Markdown Wiki, and native MCP/CLI integration ([GitHub](https://github.com/onemira-space/onemira-mcp)).
